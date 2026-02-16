@@ -1,4 +1,3 @@
-version: '3.8'
 services:
   dify-api:
     image: langgenius/dify-api:latest
