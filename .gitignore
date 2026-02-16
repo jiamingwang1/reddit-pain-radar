@@ -1,0 +1,5 @@
+data/radar.db
+__pycache__/
+.env
+analysis_log.txt
+analysis_done.txt
