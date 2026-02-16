@@ -35,6 +35,12 @@ async function configWizard(agent, opts) {
   if (opts.domain) {
     config.domain = opts.domain;
     config.ssl = opts.ssl !== false;
+  } else {
+    const domain = await ask('  Domain for SSL (e.g. agent.example.com, press Enter to skip): ');
+    if (domain) {
+      config.domain = domain;
+      config.ssl = true;
+    }
   }
 
   const env = {};
