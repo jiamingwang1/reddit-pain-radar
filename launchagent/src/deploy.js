@@ -64,14 +64,21 @@ function generateCompose(agentKey, agent, config) {
   const templatePath = join(ROOT, `templates/${agentKey}/docker-compose.yml`);
   if (existsSync(templatePath)) {
     let tmpl = readFileSync(templatePath, 'utf8');
+    // Remove deprecated version field
+    tmpl = tmpl.replace(/^version:.*\n/m, '');
     tmpl = tmpl.replace(/\$\{PORT\}/g, config.port);
     if (config.domain) tmpl = tmpl.replace(/\$\{DOMAIN\}/g, config.domain);
+    // Remove Caddy service if no domain configured
+    if (!config.domain) {
+      tmpl = tmpl.replace(/\n  caddy:[\s\S]*?(?=\n  \w|\nvolumes:)/m, '\n');
+      tmpl = tmpl.replace(/\n  caddy_data:.*$/gm, '');
+      tmpl = tmpl.replace(/\n  caddy_config:.*$/gm, '');
+    }
     return tmpl;
   }
 
   // Fallback: generate generic compose
-  return `version: "3.8"
-services:
+  return `services:
   ${agentKey}:
     image: ${agentKey}:${agent.version}
     ports:
