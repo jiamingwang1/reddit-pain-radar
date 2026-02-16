@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reddit Pain Radar — Find Real Problems, Build Real Solutions</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#1a1a2e;line-height:1.6}
+.hero{background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);color:#fff;padding:80px 20px 60px;text-align:center}
+.hero h1{font-size:3rem;margin-bottom:16px;font-weight:800}
+.hero h1 span{color:#ff6b6b}
+.hero p{font-size:1.25rem;opacity:.85;max-width:600px;margin:0 auto 32px}
+.cta-btn{display:inline-block;background:#ff6b6b;color:#fff;padding:14px 36px;border-radius:8px;font-size:1.1rem;font-weight:700;text-decoration:none;transition:transform .2s}
+.cta-btn:hover{transform:scale(1.05)}
+.cta-secondary{background:transparent;border:2px solid #fff;margin-left:12px}
+.section{max-width:960px;margin:0 auto;padding:60px 20px}
+.section h2{font-size:2rem;text-align:center;margin-bottom:40px;font-weight:700}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.feature{background:#f8f9ff;border-radius:12px;padding:28px;text-align:center}
+.feature .icon{font-size:2.5rem;margin-bottom:12px}
+.feature h3{font-size:1.2rem;margin-bottom:8px}
+.feature p{font-size:.95rem;opacity:.7}
+.how{background:#f0f2ff;padding:60px 20px}
+.how .steps{max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:24px}
+.step{display:flex;align-items:flex-start;gap:16px}
+.step-num{background:#302b63;color:#fff;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0}
+.step-text h3{margin-bottom:4px}
+.pricing{text-align:center}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:800px;margin:0 auto}
+.plan{border:2px solid #e0e0e0;border-radius:12px;padding:32px 24px;position:relative}
+.plan.popular{border-color:#ff6b6b;box-shadow:0 4px 20px rgba(255,107,107,.2)}
+.plan.popular::before{content:"MOST POPULAR";position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#ff6b6b;color:#fff;padding:4px 16px;border-radius:20px;font-size:.75rem;font-weight:700}
+.plan h3{font-size:1.3rem;margin-bottom:8px}
+.plan .price{font-size:2.5rem;font-weight:800;margin-bottom:16px}
+.plan .price span{font-size:1rem;opacity:.6}
+.plan ul{list-style:none;text-align:left;margin-bottom:24px}
+.plan ul li{padding:6px 0;border-bottom:1px solid #f0f0f0}
+.plan ul li::before{content:"✓ ";color:#4ecdc4;font-weight:700}
+.demo{background:#24243e;color:#fff;text-align:center;padding:60px 20px}
+.demo h2{margin-bottom:16px}
+.demo p{opacity:.7;margin-bottom:24px}
+.demo iframe{width:100%;max-width:800px;height:500px;border:2px solid #444;border-radius:8px}
+footer{background:#0f0c29;color:#fff;text-align:center;padding:24px;opacity:.7;font-size:.9rem}
+@media(max-width:600px){.hero h1{font-size:2rem}.plans{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>Reddit <span>Pain</span> Radar</h1>
+  <p>AI-powered Reddit scanner that finds real user problems — so you can build solutions people actually pay for.</p>
+  <a href="#pricing" class="cta-btn">Start Free →</a>
+  <a href="#demo" class="cta-btn cta-secondary">Live Demo</a>
+</div>
+
+<div class="section">
+  <h2>Stop Guessing. Start Finding.</h2>
+  <div class="features">
+    <div class="feature">
+      <div class="icon">🔍</div>
+      <h3>Auto-Scan Reddit</h3>
+      <p>Continuously monitors 50+ subreddits for complaints, frustrations, and unmet needs.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">🧠</div>
+      <h3>AI Pain Analysis</h3>
+      <p>Each post scored 0-10 on pain intensity, with category, audience, and solution ideas.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">🔔</div>
+      <h3>Instant Alerts</h3>
+      <p>High-score opportunities pushed to Discord/Slack/email the moment they're found.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">💡</div>
+      <h3>Solution Ideas</h3>
+      <p>AI generates concrete product ideas, estimates MVP effort, and rates competition.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">📊</div>
+      <h3>Trend Dashboard</h3>
+      <p>Track pain patterns over time. See which problems are growing before everyone else.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">🎯</div>
+      <h3>Niche Targeting</h3>
+      <p>Filter by category: SaaS, DevTools, Finance, Health, E-commerce, and more.</p>
+    </div>
+  </div>
+</div>
+
+<div class="how">
+  <div class="section" style="padding-top:0;padding-bottom:0">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-text"><h3>Pick Your Subreddits</h3><p>Choose from 50+ pre-loaded communities or add your own niche subreddits.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text"><h3>AI Scans & Scores</h3><p>Every post is analyzed for pain signals — frustration, requests, complaints, workarounds.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text"><h3>Get Opportunities</h3><p>High-score pain points land in your dashboard with solution ideas and market analysis.</p></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text"><h3>Build & Ship</h3><p>Pick the best opportunity, build an MVP, and launch to a proven audience.</p></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="section pricing" id="pricing">
+  <h2>Simple Pricing</h2>
+  <div class="plans">
+    <div class="plan">
+      <h3>Free</h3>
+      <div class="price">$0<span>/mo</span></div>
+      <ul>
+        <li>5 subreddits</li>
+        <li>50 posts/day scanned</li>
+        <li>Basic pain scoring</li>
+        <li>Web dashboard</li>
+      </ul>
+      <a href="#" class="cta-btn" style="width:100%;text-align:center;display:block">Get Started</a>
+    </div>
+    <div class="plan popular">
+      <h3>Pro</h3>
+      <div class="price">$19<span>/mo</span></div>
+      <ul>
+        <li>25 subreddits</li>
+        <li>500 posts/day scanned</li>
+        <li>AI solution ideas</li>
+        <li>Discord/Slack alerts</li>
+        <li>Trend tracking</li>
+      </ul>
+      <a href="#" class="cta-btn" style="width:100%;text-align:center;display:block">Start Pro Trial</a>
+    </div>
+    <div class="plan">
+      <h3>Team</h3>
+      <div class="price">$49<span>/mo</span></div>
+      <ul>
+        <li>Unlimited subreddits</li>
+        <li>Unlimited scanning</li>
+        <li>Custom keywords</li>
+        <li>API access</li>
+        <li>Priority support</li>
+        <li>Export & reports</li>
+      </ul>
+      <a href="#" class="cta-btn" style="width:100%;text-align:center;display:block">Start Team Trial</a>
+    </div>
+  </div>
+</div>
+
+<div class="demo" id="demo">
+  <h2>🔴 Live Demo</h2>
+  <p>Real data from today's Reddit scan — see actual pain points being discovered in real-time.</p>
+  <iframe src="http://96.30.205.225:8081/" loading="lazy"></iframe>
+</div>
+
+<div class="section" style="text-align:center">
+  <h2>Built for Indie Hackers & Builders</h2>
+  <p style="max-width:600px;margin:0 auto 24px;font-size:1.1rem;opacity:.7">
+    Every successful product starts with a real problem. Reddit Pain Radar helps you find those problems systematically — no more guessing, no more building things nobody wants.
+  </p>
+  <a href="#pricing" class="cta-btn">Find Your Next Product Idea →</a>
+</div>
+
+<footer>
+  <p>© 2026 Reddit Pain Radar. Built with 🔥 by the Radar team.</p>
+</footer>
+
+</body>
+</html>
