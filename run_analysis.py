@@ -25,7 +25,7 @@ while True:
             score = result.get('pain_score', 0)
             total_analyzed += 1
             print(f"[{total_analyzed}] [{score}/10] {result.get('summary_zh','')[:60]}", flush=True)
-            if score >= 6 and WEBHOOK:
+            if score >= 8 and WEBHOOK:
                 try:
                     send_opportunity(post, result, WEBHOOK)
                     total_pushed += 1

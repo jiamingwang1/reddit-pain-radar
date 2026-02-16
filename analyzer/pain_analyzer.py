@@ -27,7 +27,11 @@ Return this JSON structure:
   "tags": ["keyword1", "keyword2"]
 }}
 
-Most posts score below 6. Only high scores for posts where someone clearly needs something that does not exist yet."""
+STRICT RULES:
+- Most posts score below 6. Only high scores for posts where someone clearly needs something that does not exist yet.
+- ONLY mark is_pain_point=true if the problem can be solved by a SOFTWARE TOOL (app, SaaS, API, CLI tool, etc).
+- Ignore: emotional support posts, general advice seeking, career questions, rants without actionable problems, promotional content, community templates.
+- pain_score 8+ ONLY for: clear workflow problem + no good existing solution + user would pay for a fix."""
 
 class PainAnalyzer:
     def __init__(self, db_path="data/radar.db"):
