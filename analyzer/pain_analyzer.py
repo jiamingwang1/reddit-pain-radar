@@ -29,9 +29,11 @@ Return this JSON structure:
 
 STRICT RULES:
 - Most posts score below 6. Only high scores for posts where someone clearly needs something that does not exist yet.
-- ONLY mark is_pain_point=true if the problem can be solved by a SOFTWARE TOOL (app, SaaS, API, CLI tool, etc).
-- Ignore: emotional support posts, general advice seeking, career questions, rants without actionable problems, promotional content, community templates.
-- pain_score 8+ ONLY for: clear workflow problem + no good existing solution + user would pay for a fix."""
+- ONLY mark is_pain_point=true if the problem is a REPEATABLE WORKFLOW PROBLEM solvable by a SOFTWARE TOOL (app, SaaS, API, CLI tool, automation script).
+- Ignore ALL of these: emotional support, general advice, career questions, rants without actionable problems, promotional content, community templates, hiring/job posts, relationship/social issues, opinion polls, "what do you think" discussions.
+- pain_score 8+ ONLY for: (1) clear repeatable workflow problem + (2) no good existing solution + (3) user explicitly or implicitly would pay for a fix + (4) affects a definable market segment.
+- pain_score 6-7: has a workflow problem but existing tools partially solve it, or market is unclear.
+- pain_score 0-5: everything else including vague complaints, one-off issues, already well-served problems."""
 
 class PainAnalyzer:
     def __init__(self, db_path="data/radar.db"):
