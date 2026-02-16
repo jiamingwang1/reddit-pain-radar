@@ -23,6 +23,12 @@ scanner = RedditScanner(db_path=DB_PATH)
 analyzer = PainAnalyzer(db_path=DB_PATH)
 notifier = Notifier()
 
+@app.get("/landing", response_class=HTMLResponse)
+async def landing():
+    """Landing page"""
+    with open("landing.html") as f:
+        return f.read()
+
 @app.get("/", response_class=HTMLResponse)
 async def dashboard():
     """Main dashboard"""
